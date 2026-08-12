@@ -1,0 +1,155 @@
+# Port Scanning — TCP and UDP
+
+## When this applies
+
+- You have an authorized target IP (single host or CIDR range) and need to enumerate listening services.
+- Goal is to map the attack surface (open TCP/UDP ports) before service-level testing.
+- Both initial discovery (top 1000) and exhaustive (`-p-`) scans may be required.
+
+## Technique
+
+Send probes to each port and infer state from responses (SYN/ACK = open, RST = closed, no response = filtered). Use SYN scans for TCP (half-open, fast, requires root) and UDP scans (slow, ambiguous "open|filtered" responses) for UDP services. Combine with version detection for service banners.
+
+## Steps
+
+### 1. Fast TCP SYN scan (top 1000 ports)
+
+```bash
+# Stealth half-open scan, requires root
+nmap -sS -T4 TARGET
+
+# With reason explanation (why a port is filtered/open)
+nmap -sS -p- --reason TARGET
+```
+
+Port states:
+- **open**: SYN/ACK received
+- **closed**: RST received
+- **filtered**: No response (firewall drops)
+
+### 2. Full TCP port range
+
+```bash
+# All 65535 ports — use --min-rate for speed
+nmap -sS -p- --min-rate 10000 TARGET
+
+# Specific port ranges
+nmap -sS -p 1-1024,8000-9000 TARGET
+
+# Fast alternative with masscan
+masscan TARGET -p0-65535 --rate=1000
+```
+
+### 3. UDP scan — top 100 then targeted
+
+```bash
+# UDP top 100 (slow — UDP has no handshake)
+nmap -sU --top-ports 100 TARGET
+
+# Specific UDP services
+nmap -sU -p 53,161,162,500 TARGET
+
+# UDP with version detection (helps confirm "open|filtered")
+nmap -sU -sV --top-ports 20 TARGET
+
+# Fast UDP — short retries
+nmap -sU -T4 --max-retries 1 --top-ports 100 TARGET
+```
+
+High-value UDP services:
+- **53** DNS, **161/162** SNMP, **123** NTP, **500** IPSec IKE, **1434** MSSQL Monitor, **5353** mDNS
+
+### 4. Service version detection
+
+```bash
+# Service version detection on discovered ports
+nmap -sV -p PORTS TARGET
+
+# Aggressive (slowest, most accurate)
+nmap -sV --version-intensity 9 TARGET
+
+# Combined version + default scripts
+nmap -sV -sC TARGET
+
+# Banner grabbing without nmap
+nc -v TARGET PORT
+```
+
+Version intensity:
+- 0 = light probes only
+- 5 = default balance
+- 9 = all probes (slowest, most accurate)
+
+### 5. Focused scans for known archetypes
+
+When initial fingerprinting suggests a Windows DC archetype (any of 53/135/139/445/389 open), run a focused 13-port scan instead of `-p-`:
+
+```bash
+nmap -Pn -sC -sV -p 53,88,135,139,389,445,464,593,636,3268,3269,5985,5986,9389 \
+    -oA recon/ad-focused TARGET
+```
+
+Ports: 53 DNS, 88 Kerberos, 135 RPC, 139/445 SMB, 389/636 LDAP/LDAPS, 464 kpasswd, 593 RPC-over-HTTPS, 3268/3269 GC/GC-LDAPS, 5985/5986 WinRM, 9389 AD Web Services.
+
+### 6. TCP connect (when SYN unavailable)
+
+```bash
+# Full handshake — works without root, more easily detected
+nmap -sT TARGET
+```
+
+### 7. Mass-host discovery (parallel host + port)
+
+```bash
+# masscan: discover any host on any port range very fast
+masscan 10.0.0.0/24 -p1-65535 --rate=10000 -oG out.gnmap
+
+# Pipe into nmap for version detection on confirmed open ports only
+```
+
+## Port-range coverage (network / perimeter VAs)
+
+For a network or external-perimeter VA over a SMALL set of reachable hosts, **default to full-range** — a bounded/top-ports scan silently misses services on high ports (message buses, admin panels, TLS on non-standard ports). Run it host-count-guarded and **two-stage** so a per-port `--host-timeout` never truncates high ports:
+
+```bash
+# STAGE A — fast SYN sweep of ALL 65535 (rate-paced, NOT host-timeout-truncated)
+nmap -sS -p- --min-rate 2000 -n -Pn -oA recon/raw/full-syn-${TARGET} ${TARGET}
+PORTS=$(grep -oP "^\d+/tcp\s+open" recon/raw/full-syn-${TARGET}.nmap | awk -F/ '{print $1}' | paste -sd,)
+# STAGE B — version + TLS scripts on ONLY the found-open ports (no truncation)
+nmap -sS -sV -n -Pn -p ${PORTS} --script ssl-cert,ssl-enum-ciphers -oA recon/raw/full-svc-${TARGET} ${TARGET}
+```
+
+On a DENSE internal range (dozens+ of live hosts) fall back to a bounded set to stay fast — full-range is for the low-host-count exposed set.
+
+**Hunt the odd services full-range surfaces (both zero-coverage in a top-1000 scan):**
+- **Message buses** — ZeroMQ/ZMTP (e.g. 5555/5558/6000), AMQP/RabbitMQ (5672/15672), Kafka (9092), Redis (6379), MQTT (1883/8883). Frequently unauthenticated and internet-exposed. Confirm ZeroMQ with a read-only ZMTP handshake (prints the peer's Socket-Type; `NULL` mechanism = no auth): `python3 skills/infrastructure/tools/zmtp_probe.py <TARGET> 5558,6000`.
+- **TLS on non-443 ports** — `--script ssl-cert,ssl-enum-ciphers` fingerprints TLS on ANY port and grabs the cert (catches a forgotten/expired listener on e.g. 2234). Bounded fallback where `-sV` is inconclusive: `timeout 8 openssl s_client -connect <ip>:<port> </dev/null 2>/dev/null | openssl x509 -noout -dates`.
+
+**Filtered ≠ dark from everywhere** — a host that source-IP/geo-allowlists the perimeter can be live from another geography; re-probe filtered hosts from a second-geography vantage before concluding "no surface" (see `skills/coordination/reference/preflight-checklist.md`).
+
+## Verifying success
+
+- Discovered ports list (`nmap -oA <prefix>` writes `.nmap`, `.gnmap`, `.xml`).
+- Service/version banners returned for each open port.
+- Cross-check with `nc -v`/`telnet` against any port that nmap flagged "filtered" — sometimes scans miss services protected by SYN-cookies or rate limits.
+
+## Common pitfalls
+
+- **SYN scan needs root/sudo** — falls back to `-sT` connect scan unprivileged.
+- **`--host-timeout` on a full-range connect scan truncates high ports** — a per-host timeout can fire before high ports enumerate, so an all-zero-open result is a *truncation artifact*, not "dead." Never conclude "0 open / zero exposure" from such a run: validate the XML with `python3 tools/netscan_guard.py --xml <scan.xml>` (exit 20 = UNSOUND) and re-scan every 0-open up-host (no `--host-timeout`, or `-sS` as root) before calling it dead.
+- **Unprivileged `-sT` needs a `--max-rate` cap** — a connect scan at a high `--min-rate` exhausts the local socket table → false `filtered`. Also set `--initial-rtt-timeout/--max-rtt-timeout ≥` the observed `srtt` (from a prior scan's `<times>`), or slow-but-live services drop as filtered. `netscan_guard.py --capability-check --prior-xml <p>` computes the RTT floor and flags when to route full-range/`-sU`/`-sS` onto a root cloud vantage.
+- **Banner artifacts spawn phantom CVEs** — e.g. MariaDB prepends `5.5.5-` to its version for MySQL-client compatibility, so a naive CPE match mislabels it MySQL 5.5.5 and pulls ~200 irrelevant MySQL CVEs. Run `netscan_guard.py --suppress-cves` before `nvd-lookup.py` enrichment to drop these.
+- **UDP "open|filtered"** is the most common state — UDP services don't reply to empty probes; only version detection (`-sV`) can confirm. `open|filtered ≠ open`: a timeout is not an open port. `netscan_guard.py` reads the XML `state` literally and reports `ambiguous_open_filtered` distinctly from `true_open`.
+- **`--min-rate`** values too high cause packet loss → false negatives. Tune per network.
+- **Firewall path TTL changes** can split a host into "two hosts" in nmap output — always inspect raw nmap XML.
+- **Top-ports lists vary** between nmap versions — record `--top-ports` value in the report.
+- **`-Pn`** assumes host is up; use it when ICMP is filtered, but it scans every port even on dead hosts.
+
+## Tools
+
+- nmap (primary, all scan types, NSE scripts)
+- masscan (raw speed for large ranges)
+- RustScan (parallelized nmap front-end)
+- unicornscan (alternative async scanner)
+- hping3 (manual probe crafting for evasion tests)
+- nc/ncat (manual banner grabbing)
