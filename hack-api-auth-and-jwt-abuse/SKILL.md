@@ -69,8 +69,8 @@ Path case / slash variants
 
 ## 5. NEXT ROUTING
 
-- For GraphQL batching and hidden parameters: [graphql and hidden parameters](../graphql-and-hidden-parameters/SKILL.md)
-- For default credential and brute-force planning: [authentication bypass](../authbypass-authentication-flaws/SKILL.md)
-- For full JWT and OAuth depth: [jwt oauth token attacks](../jwt-oauth-token-attacks/SKILL.md)
-- For OAuth or OIDC configuration flaws in browser and SSO flows: [oauth oidc misconfiguration](../oauth-oidc-misconfiguration/SKILL.md)
-- For credentialed browser reads and origin trust bugs: [cors cross origin misconfiguration](../cors-cross-origin-misconfiguration/SKILL.md)
+- For GraphQL batching and hidden parameters: [graphql and hidden parameters](../hack-graphql-and-hidden-parameters/SKILL.md)
+- For default credential and brute-force planning: [authentication bypass](../hack-authbypass-authentication-flaws/SKILL.md)
+- For full JWT and OAuth depth: [jwt oauth token attacks](../hack-jwt-oauth-token-attacks/SKILL.md)
+- For OAuth or OIDC configuration flaws in browser and SSO flows: [oauth oidc misconfiguration](../hack-oauth-oidc-misconfiguration/SKILL.md)
+- For credentialed browser reads and origin trust bugs: [cors cross origin misconfiguration](../hack-cors-cross-origin-misconfiguration/SKILL.md)

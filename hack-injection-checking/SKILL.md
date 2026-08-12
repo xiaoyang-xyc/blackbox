@@ -20,24 +20,24 @@ After confirming this is an injection-class issue, use it to decide whether it i
 
 ## Skill Map
 
-- [XSS Cross Site Scripting](../xss-cross-site-scripting/SKILL.md)
-- [SQLi SQL Injection](../sqli-sql-injection/SKILL.md)
-- [SSRF Server Side Request Forgery](../ssrf-server-side-request-forgery/SKILL.md)
-- [XXE XML External Entity](../xxe-xml-external-entity/SKILL.md)
-- [SSTI Server Side Template Injection](../ssti-server-side-template-injection/SKILL.md)
-- [CMDi Command Injection](../cmdi-command-injection/SKILL.md)
-- [NoSQL Injection](../nosql-injection/SKILL.md)
-- [Deserialization Insecure](../deserialization-insecure/SKILL.md)
-- [JNDI Injection](../jndi-injection/SKILL.md)
-- [Expression Language Injection](../expression-language-injection/SKILL.md)
-- [CRLF Injection](../crlf-injection/SKILL.md)
+- [XSS Cross Site Scripting](../hack-xss-cross-site-scripting/SKILL.md)
+- [SQLi SQL Injection](../hack-sqli-sql-injection/SKILL.md)
+- [SSRF Server Side Request Forgery](../hack-ssrf-server-side-request-forgery/SKILL.md)
+- [XXE XML External Entity](../hack-xxe-xml-external-entity/SKILL.md)
+- [SSTI Server Side Template Injection](../hack-ssti-server-side-template-injection/SKILL.md)
+- [CMDi Command Injection](../hack-cmdi-command-injection/SKILL.md)
+- NoSQL Injection
+- [Deserialization Insecure](../hack-deserialization-insecure/SKILL.md)
+- [JNDI Injection](../hack-jndi-injection/SKILL.md)
+- [Expression Language Injection](../hack-expression-language-injection/SKILL.md)
+- [CRLF Injection](../hack-crlf-injection/SKILL.md)
 - [Extra Injection Types (SSI, LDAP, XPath)](./EXTRA_INJECTION_TYPES.md)
-- [Request Smuggling](../request-smuggling/SKILL.md)
-- [Prototype Pollution](../prototype-pollution/SKILL.md)
-- [Type Juggling](../type-juggling/SKILL.md)
-- [HTTP Parameter Pollution](../http-parameter-pollution/SKILL.md)
-- [XSLT Injection](../xslt-injection/SKILL.md)
-- [CSV Formula Injection](../csv-formula-injection/SKILL.md)
+- [Request Smuggling](../hack-request-smuggling/SKILL.md)
+- [Prototype Pollution](../hack-prototype-pollution/SKILL.md)
+- [Type Juggling](../hack-type-juggling/SKILL.md)
+- [HTTP Parameter Pollution](../hack-http-parameter-pollution/SKILL.md)
+- [XSLT Injection](../hack-xslt-injection/SKILL.md)
+- [CSV Formula Injection](../hack-csv-formula-injection/SKILL.md)
 
 ## Recommended Flow
 
@@ -47,4 +47,4 @@ After confirming this is an injection-class issue, use it to decide whether it i
 
 ## Related Categories
 
-- [file-access-vuln](../file-access-vuln/SKILL.md)
+- [file-access-vuln](../hack-file-access-vuln/SKILL.md)

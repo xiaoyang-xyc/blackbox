@@ -12,8 +12,8 @@ description: >-
 
 Before going deep, consider loading:
 
-- [macos-security-bypass](../macos-security-bypass/SKILL.md) when you need to bypass TCC, Gatekeeper, or SIP protections blocking your injection
-- [linux-privilege-escalation](../linux-privilege-escalation/SKILL.md) for Unix-layer escalation (shared object hijacking concepts apply)
+- [macos-security-bypass](../hack-macos-security-bypass/SKILL.md) when you need to bypass TCC, Gatekeeper, or SIP protections blocking your injection
+- [linux-privilege-escalation](../hack-linux-privilege-escalation/SKILL.md) for Unix-layer escalation (shared object hijacking concepts apply)
 
 ### Advanced Reference
 

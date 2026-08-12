@@ -158,7 +158,6 @@ Admin panels built with Vue CLI (webpack) defer API calls to route chunks. Recip
 4. Filter out static dirs (/static /assets /images /css /js /fonts); leftovers = real handler paths
 5. Also grep JS for `://subdomain` — H5/mobile bundles often hardcode the real backend host (found: h5 bundle pointing at `https://subadmin.target.cn/api-v2`)
 6. Probe handlers with GET: `200 data` → open; `401` → auth OK; `404 "No handler found"` → wrong path/verb
-Full recipe + PowerShell regexes + case study: `references/js-api-mining-and-catchall.md`
 
 ### API Endpoint Discovery
 ```bash

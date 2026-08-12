@@ -10,8 +10,8 @@ description: >-
 
 ## 0. RELATED ROUTING
 
-- [smart-contract-vulnerabilities](../smart-contract-vulnerabilities/SKILL.md) for underlying Solidity vulnerability patterns (reentrancy, integer overflow, delegatecall)
-- [deserialization-insecure](../deserialization-insecure/SKILL.md) when targeting off-chain bridge relayer or indexer infrastructure
+- [smart-contract-vulnerabilities](https://github.com/xiaoyang-xyc/whitebox/blob/main/hack-smart-contract-vulnerabilities/SKILL.md) for underlying Solidity vulnerability patterns (reentrancy, integer overflow, delegatecall)
+- [deserialization-insecure](../hack-deserialization-insecure/SKILL.md) when targeting off-chain bridge relayer or indexer infrastructure
 
 ---
 
@@ -350,6 +350,6 @@ Analyzing a DeFi protocol?
 │   │   ├── Slippage protection enforced?
 │   │   └── Private mempool integration?
 │   └── No → Continue
-└── Load [smart-contract-vulnerabilities](../smart-contract-vulnerabilities/SKILL.md)
+└── Load [smart-contract-vulnerabilities](https://github.com/xiaoyang-xyc/whitebox/blob/main/hack-smart-contract-vulnerabilities/SKILL.md)
     for underlying Solidity-level bugs
 ```

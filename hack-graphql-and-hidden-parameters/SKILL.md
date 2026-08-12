@@ -45,6 +45,6 @@ Look for:
 
 ## 4. NEXT ROUTING
 
-- If hidden fields affect privilege: [api authorization and bola](../api-authorization-and-bola/SKILL.md)
-- If GraphQL batching changes auth or rate behavior: [api auth and jwt abuse](../api-auth-and-jwt-abuse/SKILL.md)
-- If endpoint discovery is incomplete: [api recon and docs](../api-recon-and-docs/SKILL.md)
+- If hidden fields affect privilege: [api authorization and bola](../hack-api-authorization-and-bola/SKILL.md)
+- If GraphQL batching changes auth or rate behavior: [api auth and jwt abuse](../hack-api-auth-and-jwt-abuse/SKILL.md)
+- If endpoint discovery is incomplete: [api recon and docs](../hack-api-recon-and-docs/SKILL.md)

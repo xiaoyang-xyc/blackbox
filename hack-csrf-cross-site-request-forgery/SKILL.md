@@ -12,8 +12,8 @@ description: >-
 
 Also load:
 
-- [cors cross origin misconfiguration](../cors-cross-origin-misconfiguration/SKILL.md) when JSON endpoints become readable cross-origin
-- [oauth oidc misconfiguration](../oauth-oidc-misconfiguration/SKILL.md) when login, account linking, or callback binding relies on OAuth state
+- [cors cross origin misconfiguration](../hack-cors-cross-origin-misconfiguration/SKILL.md) when JSON endpoints become readable cross-origin
+- [oauth oidc misconfiguration](../hack-oauth-oidc-misconfiguration/SKILL.md) when login, account linking, or callback binding relies on OAuth state
 
 ---
 

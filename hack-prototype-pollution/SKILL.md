@@ -185,6 +185,6 @@ Prioritize use on **authorized** targets; automated tools can cause side effects
 
 ## Related routing
 
-- Input routing and multi-injection parallel entry -> [Injection Testing Router](../injection-checking/SKILL.md).
-- Template execution chains (non-PP) -> [SSTI](../ssti-server-side-template-injection/SKILL.md).
-- Insecure deserialization (non-JS prototype) -> [Deserialization](../deserialization-insecure/SKILL.md).
+- Input routing and multi-injection parallel entry -> [Injection Testing Router](../hack-injection-checking/SKILL.md).
+- Template execution chains (non-PP) -> [SSTI](../hack-ssti-server-side-template-injection/SKILL.md).
+- Insecure deserialization (non-JS prototype) -> [Deserialization](../hack-deserialization-insecure/SKILL.md).

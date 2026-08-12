@@ -6,13 +6,13 @@ description: >-
 
 # SKILL: Prototype Pollution Advanced — RCE & Gadget Exploitation
 
-> **AI LOAD INSTRUCTION**: Advanced prototype pollution escalation. Covers server-side RCE via template engines (EJS, Pug, Handlebars), Node.js child_process gadgets, client-side script gadgets, filter bypass patterns, and systematic detection. Load [../prototype-pollution/SKILL.md](../prototype-pollution/SKILL.md) first for fundamentals (merge sinks, `__proto__` vs `constructor.prototype`, basic probes).
+> **AI LOAD INSTRUCTION**: Advanced prototype pollution escalation. Covers server-side RCE via template engines (EJS, Pug, Handlebars), Node.js child_process gadgets, client-side script gadgets, filter bypass patterns, and systematic detection. Load [../prototype-pollution/SKILL.md](../hack-prototype-pollution/SKILL.md) first for fundamentals (merge sinks, `__proto__` vs `constructor.prototype`, basic probes).
 
 ## 0. RELATED ROUTING
 
-- [prototype-pollution](../prototype-pollution/SKILL.md) — **LOAD FIRST** for PP fundamentals, merge-sink detection, basic probes
-- [ssti-server-side-template-injection](../ssti-server-side-template-injection/SKILL.md) — template engine RCE context (PP often triggers through template gadgets)
-- [xss-cross-site-scripting](../xss-cross-site-scripting/SKILL.md) — client-side PP gadgets ultimately achieve XSS
+- [prototype-pollution](../hack-prototype-pollution/SKILL.md) — **LOAD FIRST** for PP fundamentals, merge-sink detection, basic probes
+- [ssti-server-side-template-injection](../hack-ssti-server-side-template-injection/SKILL.md) — template engine RCE context (PP often triggers through template gadgets)
+- [xss-cross-site-scripting](../hack-xss-cross-site-scripting/SKILL.md) — client-side PP gadgets ultimately achieve XSS
 
 ### Advanced Reference
 

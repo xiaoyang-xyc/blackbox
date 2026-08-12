@@ -18,12 +18,12 @@ This is the starting router for new targets and unknown attack surfaces.
 
 ## Skill Map
 
-- [Recon and Methodology](../recon-and-methodology/SKILL.md)
-- [Insecure Source Code Management](../insecure-source-code-management/SKILL.md) — .git/.svn/.hg exposure detection
-- [Dependency Confusion](../dependency-confusion/SKILL.md) — Supply chain reconnaissance for internal package names
+- [Recon and Methodology](../hack-recon-and-methodology/SKILL.md)
+- [Insecure Source Code Management](../hack-insecure-source-code-management/SKILL.md) — .git/.svn/.hg exposure detection
+- [Dependency Confusion](../hack-dependency-confusion/SKILL.md) — Supply chain reconnaissance for internal package names
 
 ## Recommended Flow
 
 1. First confirm in-scope assets and target type
 2. Then perform asset discovery, port/service identification, technology fingerprinting, and endpoint collection
-3. Route based on collected findings to [api-sec](../api-sec/SKILL.md), [auth-sec](../auth-sec/SKILL.md), [injection-checking](../injection-checking/SKILL.md), or [business-logic-vuln](../business-logic-vuln/SKILL.md)
+3. Route based on collected findings to [api-sec](../hack-api-sec/SKILL.md), [auth-sec](../hack-auth-sec/SKILL.md), [injection-checking](../hack-injection-checking/SKILL.md), or [business-logic-vuln](../hack-business-logic-vuln/SKILL.md)

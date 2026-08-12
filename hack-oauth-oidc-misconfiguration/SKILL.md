@@ -18,7 +18,7 @@ Load when:
 
 For token cryptography and JWT header abuse, also load:
 
-- [jwt oauth token attacks](../jwt-oauth-token-attacks/SKILL.md)
+- [jwt oauth token attacks](../hack-jwt-oauth-token-attacks/SKILL.md)
 
 ## 2. HIGH-VALUE MISCONFIGURATION CHECKS
 
@@ -41,6 +41,6 @@ For token cryptography and JWT header abuse, also load:
 
 ## 4. RELATED ROUTES
 
-- CORS or cross-origin token exposure: [cors cross origin misconfiguration](../cors-cross-origin-misconfiguration/SKILL.md)
-- XML federation or enterprise SSO: [saml sso assertion attacks](../saml-sso-assertion-attacks/SKILL.md)
-- CSRF-heavy login or binding bugs: [csrf cross site request forgery](../csrf-cross-site-request-forgery/SKILL.md)
+- CORS or cross-origin token exposure: [cors cross origin misconfiguration](../hack-cors-cross-origin-misconfiguration/SKILL.md)
+- XML federation or enterprise SSO: [saml sso assertion attacks](../hack-saml-sso-assertion-attacks/SKILL.md)
+- CSRF-heavy login or binding bugs: [csrf cross site request forgery](../hack-csrf-cross-site-request-forgery/SKILL.md)

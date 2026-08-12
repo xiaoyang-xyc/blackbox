@@ -12,11 +12,11 @@ description: >-
 
 Before going deep, consider loading:
 
-- [linux-privilege-escalation](../linux-privilege-escalation/SKILL.md) if you need root on the current host before pivoting
-- [linux-security-bypass](../linux-security-bypass/SKILL.md) when restricted shells or security modules block lateral movement tools
-- [container-escape-techniques](../container-escape-techniques/SKILL.md) when the target network includes containerized hosts
-- [kubernetes-pentesting](../kubernetes-pentesting/SKILL.md) when pivoting into a Kubernetes cluster
-- [unauthorized-access-common-services](../unauthorized-access-common-services/SKILL.md) for exploiting discovered internal services (Redis, MongoDB, etc.)
+- [linux-privilege-escalation](../hack-linux-privilege-escalation/SKILL.md) if you need root on the current host before pivoting
+- [linux-security-bypass](../hack-linux-security-bypass/SKILL.md) when restricted shells or security modules block lateral movement tools
+- [container-escape-techniques](../hack-container-escape-techniques/SKILL.md) when the target network includes containerized hosts
+- [kubernetes-pentesting](../hack-kubernetes-pentesting/SKILL.md) when pivoting into a Kubernetes cluster
+- unauthorized-access-common-services for exploiting discovered internal services (Redis, MongoDB, etc.)
 
 ---
 

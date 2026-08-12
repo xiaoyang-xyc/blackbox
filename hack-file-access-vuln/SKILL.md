@@ -18,8 +18,8 @@ This is the routing entry point for filesystem paths, download endpoints, upload
 
 ## Skill Map
 
-- [Path Traversal LFI](../path-traversal-lfi/SKILL.md): path traversal, file read, wrapper abuse, include chains
-- [Upload Insecure Files](../upload-insecure-files/SKILL.md): upload validation, storage paths, processing chains, overwrite risk, preview/share boundaries
+- [Path Traversal LFI](../hack-path-traversal-lfi/SKILL.md): path traversal, file read, wrapper abuse, include chains
+- Upload Insecure Files: upload validation, storage paths, processing chains, overwrite risk, preview/share boundaries
 
 ## Recommended Flow
 
@@ -29,5 +29,5 @@ This is the routing entry point for filesystem paths, download endpoints, upload
 
 ## Related Categories
 
-- [injection-checking](../injection-checking/SKILL.md)
-- [business-logic-vuln](../business-logic-vuln/SKILL.md)
+- [injection-checking](../hack-injection-checking/SKILL.md)
+- [business-logic-vuln](../hack-business-logic-vuln/SKILL.md)

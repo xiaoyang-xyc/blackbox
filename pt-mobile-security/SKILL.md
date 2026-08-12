@@ -44,7 +44,7 @@ Per-class detail: [`reference/masvs-class-map.md`](reference/masvs-class-map.md)
 
 ## Methodology
 
-Start at **[reference/methodology.md](reference/methodology.md)** — the phase backbone (ACQUIRE → TRIAGE → STATIC → DYNAMIC → NETWORK → STORAGE → PLATFORM/IPC → BACKEND PIVOT → REPORT), app acquisition + evidence integrity, the MASVS→file coverage map, finding-tagging convention, and the client→API pivot. It routes to every reference below. Do preflight ([../coordination/reference/preflight-checklist.md](../coordination/reference/preflight-checklist.md)) first.
+Start at **[reference/methodology.md](reference/methodology.md)** — the phase backbone (ACQUIRE → TRIAGE → STATIC → DYNAMIC → NETWORK → STORAGE → PLATFORM/IPC → BACKEND PIVOT → REPORT), app acquisition + evidence integrity, the MASVS→file coverage map, finding-tagging convention, and the client→API pivot. It routes to every reference below. Do preflight (../coordination/reference/preflight-checklist.md) first.
 
 ## References
 
@@ -66,14 +66,14 @@ Start at **[reference/methodology.md](reference/methodology.md)** — the phase 
 - [reference/scenarios/android/native-lib-host-extraction.md](reference/scenarios/android/native-lib-host-extraction.md) — host-side `dlopen` of an Android `.so` with a Bionic→glibc forwarder + `strcmp`/`memcmp` interceptor (no Frida/emulator).
 
 **Cross-skill (reused capabilities — cross-linked, not duplicated)**
-- [../reverse-engineering/reference/scenarios/static-analysis/unity-il2cpp-recipe.md](../reverse-engineering/reference/scenarios/static-analysis/unity-il2cpp-recipe.md) — Unity `libil2cpp.so` + `global-metadata.dat` dump (Il2CppDumper/Il2CppInspector).
-- [../reverse-engineering/reference/scenarios/dynamic-analysis/frida-hooking.md](../reverse-engineering/reference/scenarios/dynamic-analysis/frida-hooking.md) — Frida hooking primitives (spawn/attach, Interceptor, Stalker, `Java.perform`, ObjC hooks) used by both dynamic files.
-- [../reverse-engineering/reference/scenarios/obfuscation/packed-binaries.md](../reverse-engineering/reference/scenarios/obfuscation/packed-binaries.md) — packer / anti-analysis unpacking for obfuscated APKs/`.so`.
-- [../reverse-engineering/reference/scenarios/obfuscation/hash-dispatcher-chain.md](../reverse-engineering/reference/scenarios/obfuscation/hash-dispatcher-chain.md) — Z3 over polynomial-hash dispatcher chains in a native `.so`.
-- [../api-security/reference/scenarios/rest/owasp-bola-bopla.md](../api-security/reference/scenarios/rest/owasp-bola-bopla.md) · [../api-security/reference/scenarios/rest/mass-assignment.md](../api-security/reference/scenarios/rest/mass-assignment.md) — the client→API pivot for endpoints/IDOR recovered from the client.
+- [../reverse-engineering/reference/scenarios/static-analysis/unity-il2cpp-recipe.md](https://github.com/xiaoyang-xyc/whitebox/blob/main/pt-reverse-engineering/reference/scenarios/static-analysis/unity-il2cpp-recipe.md) — Unity `libil2cpp.so` + `global-metadata.dat` dump (Il2CppDumper/Il2CppInspector).
+- [../reverse-engineering/reference/scenarios/dynamic-analysis/frida-hooking.md](https://github.com/xiaoyang-xyc/whitebox/blob/main/pt-reverse-engineering/reference/scenarios/dynamic-analysis/frida-hooking.md) — Frida hooking primitives (spawn/attach, Interceptor, Stalker, `Java.perform`, ObjC hooks) used by both dynamic files.
+- [../reverse-engineering/reference/scenarios/obfuscation/packed-binaries.md](https://github.com/xiaoyang-xyc/whitebox/blob/main/pt-reverse-engineering/reference/scenarios/obfuscation/packed-binaries.md) — packer / anti-analysis unpacking for obfuscated APKs/`.so`.
+- [../reverse-engineering/reference/scenarios/obfuscation/hash-dispatcher-chain.md](https://github.com/xiaoyang-xyc/whitebox/blob/main/pt-reverse-engineering/reference/scenarios/obfuscation/hash-dispatcher-chain.md) — Z3 over polynomial-hash dispatcher chains in a native `.so`.
+- [../api-security/reference/scenarios/rest/owasp-bola-bopla.md](../pt-api-security/reference/scenarios/rest/owasp-bola-bopla.md) · [../api-security/reference/scenarios/rest/mass-assignment.md](../pt-api-security/reference/scenarios/rest/mass-assignment.md) — the client→API pivot for endpoints/IDOR recovered from the client.
 
 **Deterministic control-wiring detector**
-- [`../../tools/apk_control_wiring.py`](../../tools/apk_control_wiring.py) — static cross-reference over a decompiled Android tree that distinguishes a REAL applied control from an ORPHANED one: RootBeer/SafetyNet/Play-Integrity **shipped-but-unwired** (referenced but the result gates nothing), `CertificatePinner` **built-but-not-attached** to an OkHttpClient, hardcoded AES/DES key literals + their invoke-sites, and bundled-but-never-loaded `.so`. Run it in the STATIC phase BEFORE authoring remediation verdicts — a naive re-test that only greps for the control's presence wrongly reports an inert control "fixed" (a recurring mobile re-test crux).
+- `../../tools/apk_control_wiring.py` — static cross-reference over a decompiled Android tree that distinguishes a REAL applied control from an ORPHANED one: RootBeer/SafetyNet/Play-Integrity **shipped-but-unwired** (referenced but the result gates nothing), `CertificatePinner` **built-but-not-attached** to an OkHttpClient, hardcoded AES/DES key literals + their invoke-sites, and bundled-but-never-loaded `.so`. Run it in the STATIC phase BEFORE authoring remediation verdicts — a naive re-test that only greps for the control's presence wrongly reports an inert control "fixed" (a recurring mobile re-test crux).
 
 ## Anti-patterns
 

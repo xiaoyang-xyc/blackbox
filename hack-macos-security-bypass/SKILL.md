@@ -12,9 +12,9 @@ description: >-
 
 Before going deep, consider loading:
 
-- [macos-process-injection](../macos-process-injection/SKILL.md) when you need dylib injection, XPC exploitation, or Electron abuse after achieving initial access
-- [linux-privilege-escalation](../linux-privilege-escalation/SKILL.md) for Unix-layer privesc techniques that also apply to macOS (SUID, cron, writable paths)
-- [linux-security-bypass](../linux-security-bypass/SKILL.md) for shared Unix security bypass concepts
+- [macos-process-injection](../hack-macos-process-injection/SKILL.md) when you need dylib injection, XPC exploitation, or Electron abuse after achieving initial access
+- [linux-privilege-escalation](../hack-linux-privilege-escalation/SKILL.md) for Unix-layer privesc techniques that also apply to macOS (SUID, cron, writable paths)
+- [linux-security-bypass](../hack-linux-security-bypass/SKILL.md) for shared Unix security bypass concepts
 
 ### Advanced Reference
 

@@ -33,7 +33,7 @@ Also load [ADVANCED_XSS_TRICKS.md](./ADVANCED_XSS_TRICKS.md) when you need:
 
 Before broad payload spraying, you can first load:
 
-- [upload insecure files](../upload-insecure-files/SKILL.md) when you need the full upload path: validation, storage, preview, and sharing behavior
+- upload insecure files when you need the full upload path: validation, storage, preview, and sharing behavior
 
 ### Quick context picks
 

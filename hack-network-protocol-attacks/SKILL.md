@@ -12,10 +12,10 @@ description: >-
 
 Before going deep, consider loading:
 
-- [tunneling-and-pivoting](../tunneling-and-pivoting/SKILL.md) after establishing MitM position for traffic redirection
-- [ntlm-relay-coercion](../ntlm-relay-coercion/SKILL.md) for relaying captured NTLM hashes from poisoning attacks
-- [unauthorized-access-common-services](../unauthorized-access-common-services/SKILL.md) for exploiting services discovered during network attacks
-- [traffic-analysis-pcap](../traffic-analysis-pcap/SKILL.md) for analyzing captured traffic from MitM
+- [tunneling-and-pivoting](../hack-tunneling-and-pivoting/SKILL.md) after establishing MitM position for traffic redirection
+- [ntlm-relay-coercion](../hack-ntlm-relay-coercion/SKILL.md) for relaying captured NTLM hashes from poisoning attacks
+- unauthorized-access-common-services for exploiting services discovered during network attacks
+- [traffic-analysis-pcap](https://github.com/xiaoyang-xyc/whitebox/blob/main/hack-traffic-analysis-pcap/SKILL.md) for analyzing captured traffic from MitM
 
 ### Advanced Reference
 

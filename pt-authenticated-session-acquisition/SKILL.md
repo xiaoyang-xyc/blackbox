@@ -5,11 +5,11 @@ description: Acquire an authenticated session THROUGH MFA/OTP on an in-scope tar
 
 # Authenticated Session Acquisition
 
-On financial and multi-tenant targets the login is gated by SMS OTP / TOTP MFA that an autonomous run cannot satisfy, so the post-auth surface (BOLA/IDOR/mass-assignment/injection on the real data APIs, session handling, API pivots) silently collapses to pre-auth findings only. This skill's job is narrow and concrete: **get one legitimate authenticated session and hand it to the executors as a reusable artifact.** It does not attack the auth mechanism — see [`authentication`](../authentication/SKILL.md) for that.
+On financial and multi-tenant targets the login is gated by SMS OTP / TOTP MFA that an autonomous run cannot satisfy, so the post-auth surface (BOLA/IDOR/mass-assignment/injection on the real data APIs, session handling, API pivots) silently collapses to pre-auth findings only. This skill's job is narrow and concrete: **get one legitimate authenticated session and hand it to the executors as a reusable artifact.** It does not attack the auth mechanism — see [`authentication`](../pt-authentication/SKILL.md) for that.
 
 ## The artifact contract (how the session reaches executors)
 
-Emit both, into the engagement's OUTPUT_DIR, referenced BY NAME (never inline secrets — [`credential-loading.md`](../coordination/reference/credential-loading.md)):
+Emit both, into the engagement's OUTPUT_DIR, referenced BY NAME (never inline secrets — `credential-loading.md`):
 
 - `OUTPUT_DIR/<asset>/session/storageState.json` — the Playwright storage state (cookies + localStorage) for browser-driven post-auth testing.
 - `OUTPUT_DIR/<asset>/session/bearer.txt` — the raw access/ID token (+ its `expires_at`) for direct API replay.
@@ -20,7 +20,7 @@ Executors consume these exactly like any env-loaded secret: the scope file's `cr
 
 | Mode | When | How |
 |------|------|-----|
-| **TOTP-from-seed** | The client shared the TOTP secret (Base32 seed) for a test account | Generate the current code deterministically with [`tools/totp_now.py`](../../tools/totp_now.py) `<BASE32_SEED>`, submit it in the login flow. Fully autonomous, repeatable. |
+| **TOTP-from-seed** | The client shared the TOTP secret (Base32 seed) for a test account | Generate the current code deterministically with `tools/totp_now.py` `<BASE32_SEED>`, submit it in the login flow. Fully autonomous, repeatable. |
 | **Explicit-OTP** | The operator can read a one-time code (SMS/email/authenticator) at run time | Drive login to the OTP prompt, the operator supplies the code once, continue. |
 | **Human-in-the-loop resume** | OTP arrives out-of-band and the run must pause | Persist the pre-OTP browser context, pause; the operator completes the challenge; resume and capture `storageState`. |
 
@@ -34,9 +34,9 @@ If no test account / OTP seed is available and no OTP can be relayed, the realm'
 
 1. File a client-input request at `reports/client-input-requests/CIR-NNN.md` naming exactly what's needed ("needs test account / OTP seed / allowlist for `<realm>`").
 2. Set a realm-level `BLOCKED_REASON` in `attack-chain.md`.
-3. Mark that realm's post-auth coverage cells `status:"deferred"` in `coverage.json`, each carrying `deferral_reason` + `client_input_request` (the CIR path) — see [`coverage-matrix.md`](../coordination/reference/coverage-matrix.md). The deterministic gate then discloses the deferred surface in the report rather than hiding it, and only the parent orchestrator (via `coverage_gate.py --accept-deferrals`) may finalize a substantiated-deferred engagement. A scope that is *entirely* auth-gated never completes.
+3. Mark that realm's post-auth coverage cells `status:"deferred"` in `coverage.json`, each carrying `deferral_reason` + `client_input_request` (the CIR path) — see `coverage-matrix.md`. The deterministic gate then discloses the deferred surface in the report rather than hiding it, and only the parent orchestrator (via `coverage_gate.py --accept-deferrals`) may finalize a substantiated-deferred engagement. A scope that is *entirely* auth-gated never completes.
 
-The preflight cred-reach probe ([`preflight-checklist.md`](../coordination/reference/preflight-checklist.md), Phase-1 gate) is what triggers this path: present creds are not working creds; verify reachability per realm before spawning post-auth executors.
+The preflight cred-reach probe (`preflight-checklist.md`, Phase-1 gate) is what triggers this path: present creds are not working creds; verify reachability per realm before spawning post-auth executors.
 
 ## Workflow
 
@@ -56,4 +56,4 @@ The preflight cred-reach probe ([`preflight-checklist.md`](../coordination/refer
 ## Reference
 
 - [`reference/session-acquisition.md`](reference/session-acquisition.md) — per-IdP acquisition recipes (Auth0 / Okta / Cognito / Descope) + the storageState/Bearer export.
-- [`tools/totp_now.py`](../../tools/totp_now.py) — stdlib RFC-6238 TOTP generator (the TOTP-from-seed mode).
+- `tools/totp_now.py` — stdlib RFC-6238 TOTP generator (the TOTP-from-seed mode).

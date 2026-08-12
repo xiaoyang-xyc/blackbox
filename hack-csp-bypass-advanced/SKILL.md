@@ -12,11 +12,11 @@ description: >-
 
 ## 0. RELATED ROUTING
 
-- [xss-cross-site-scripting](../xss-cross-site-scripting/SKILL.md) for XSS vectors to deliver after CSP bypass
-- [dangling-markup-injection](../dangling-markup-injection/SKILL.md) when CSP blocks scripts but HTML injection exists — exfiltrate without JS
-- [crlf-injection](../crlf-injection/SKILL.md) when CRLF can inject CSP header or steal nonce via response splitting
-- [waf-bypass-techniques](../waf-bypass-techniques/SKILL.md) when both WAF and CSP must be bypassed
-- [clickjacking](../clickjacking/SKILL.md) when CSP lacks `frame-ancestors` — clickjacking still possible
+- [xss-cross-site-scripting](../hack-xss-cross-site-scripting/SKILL.md) for XSS vectors to deliver after CSP bypass
+- [dangling-markup-injection](../hack-dangling-markup-injection/SKILL.md) when CSP blocks scripts but HTML injection exists — exfiltrate without JS
+- [crlf-injection](../hack-crlf-injection/SKILL.md) when CRLF can inject CSP header or steal nonce via response splitting
+- [waf-bypass-techniques](../hack-waf-bypass-techniques/SKILL.md) when both WAF and CSP must be bypassed
+- [clickjacking](../hack-clickjacking/SKILL.md) when CSP lacks `frame-ancestors` — clickjacking still possible
 
 ---
 

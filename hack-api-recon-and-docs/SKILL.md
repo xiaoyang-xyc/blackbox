@@ -55,7 +55,7 @@ curl https://target/app.js | grep -oE '(/api|/rest|/graphql)[^"'\'' ]+' | sort -
 
 | Finding | Next Skill |
 |---|---|
-| object IDs everywhere | [api authorization and bola](../api-authorization-and-bola/SKILL.md) |
-| JWT, OAuth, role claims | [api auth and jwt abuse](../api-auth-and-jwt-abuse/SKILL.md) |
-| GraphQL or hidden fields | [graphql and hidden parameters](../graphql-and-hidden-parameters/SKILL.md) |
-| strong auth boundary but suspicious business flow | [business logic vulnerabilities](../business-logic-vulnerabilities/SKILL.md) |
+| object IDs everywhere | [api authorization and bola](../hack-api-authorization-and-bola/SKILL.md) |
+| JWT, OAuth, role claims | [api auth and jwt abuse](../hack-api-auth-and-jwt-abuse/SKILL.md) |
+| GraphQL or hidden fields | [graphql and hidden parameters](../hack-graphql-and-hidden-parameters/SKILL.md) |
+| strong auth boundary but suspicious business flow | [business logic vulnerabilities](../hack-business-logic-vulnerabilities/SKILL.md) |

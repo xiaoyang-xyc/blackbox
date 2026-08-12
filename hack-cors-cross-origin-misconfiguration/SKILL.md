@@ -46,9 +46,9 @@ Load when:
 
 ## 4. RELATED ROUTES
 
-- Session or JSON action abuse: [csrf cross site request forgery](../csrf-cross-site-request-forgery/SKILL.md)
-- OAuth token leakage and callback binding: [oauth oidc misconfiguration](../oauth-oidc-misconfiguration/SKILL.md)
-- API auth context: [api auth and jwt abuse](../api-auth-and-jwt-abuse/SKILL.md)
+- Session or JSON action abuse: [csrf cross site request forgery](../hack-csrf-cross-site-request-forgery/SKILL.md)
+- OAuth token leakage and callback binding: [oauth oidc misconfiguration](../hack-oauth-oidc-misconfiguration/SKILL.md)
+- API auth context: [api auth and jwt abuse](../hack-api-auth-and-jwt-abuse/SKILL.md)
 
 ---
 

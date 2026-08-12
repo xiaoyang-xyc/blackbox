@@ -12,10 +12,10 @@ description: >-
 
 Before going deep, consider loading:
 
-- [network-protocol-attacks](../network-protocol-attacks/SKILL.md) for network-level attacks from pivot positions
-- [reverse-shell-techniques](../reverse-shell-techniques/SKILL.md) for establishing initial access shells
-- [unauthorized-access-common-services](../unauthorized-access-common-services/SKILL.md) for exploiting services discovered through pivots
-- [linux-privilege-escalation](../linux-privilege-escalation/SKILL.md) or [windows-privilege-escalation](../windows-privilege-escalation/SKILL.md) after pivoting to new hosts
+- [network-protocol-attacks](../hack-network-protocol-attacks/SKILL.md) for network-level attacks from pivot positions
+- reverse-shell-techniques for establishing initial access shells
+- unauthorized-access-common-services for exploiting services discovered through pivots
+- [linux-privilege-escalation](../hack-linux-privilege-escalation/SKILL.md) or [windows-privilege-escalation](../hack-windows-privilege-escalation/SKILL.md) after pivoting to new hosts
 
 ---
 

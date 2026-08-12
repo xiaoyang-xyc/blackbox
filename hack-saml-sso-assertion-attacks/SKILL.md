@@ -36,6 +36,6 @@ Load when:
 
 ## 4. RELATED ROUTES
 
-- XML parser attack depth: [xxe xml external entity](../xxe-xml-external-entity/SKILL.md)
-- OAuth or OIDC SSO alternatives: [oauth oidc misconfiguration](../oauth-oidc-misconfiguration/SKILL.md)
-- Auth boundary issues after SSO: [authbypass authentication flaws](../authbypass-authentication-flaws/SKILL.md)
+- XML parser attack depth: [xxe xml external entity](../hack-xxe-xml-external-entity/SKILL.md)
+- OAuth or OIDC SSO alternatives: [oauth oidc misconfiguration](../hack-oauth-oidc-misconfiguration/SKILL.md)
+- Auth boundary issues after SSO: [authbypass authentication flaws](../hack-authbypass-authentication-flaws/SKILL.md)

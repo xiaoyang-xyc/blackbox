@@ -12,10 +12,10 @@ description: >-
 
 Before going deep, consider loading:
 
-- [active-directory-certificate-services](../active-directory-certificate-services/SKILL.md) for ESC8 (relay to ADCS enrollment)
-- [active-directory-acl-abuse](../active-directory-acl-abuse/SKILL.md) for ACL modification via LDAP relay (RBCD, shadow creds)
-- [active-directory-kerberos-attacks](../active-directory-kerberos-attacks/SKILL.md) for Kerberos attacks after relay success
-- [windows-lateral-movement](../windows-lateral-movement/SKILL.md) for post-relay lateral movement
+- [active-directory-certificate-services](../hack-active-directory-certificate-services/SKILL.md) for ESC8 (relay to ADCS enrollment)
+- [active-directory-acl-abuse](../hack-active-directory-acl-abuse/SKILL.md) for ACL modification via LDAP relay (RBCD, shadow creds)
+- [active-directory-kerberos-attacks](../hack-active-directory-kerberos-attacks/SKILL.md) for Kerberos attacks after relay success
+- [windows-lateral-movement](../hack-windows-lateral-movement/SKILL.md) for post-relay lateral movement
 
 ### Advanced Reference
 

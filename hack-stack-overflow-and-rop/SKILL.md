@@ -10,10 +10,10 @@ description: >-
 
 ## 0. RELATED ROUTING
 
-- [format-string-exploitation](../format-string-exploitation/SKILL.md) — leak canary/libc/PIE base via format string before triggering overflow
-- [binary-protection-bypass](../binary-protection-bypass/SKILL.md) — systematic bypass of NX, ASLR, PIE, canary, RELRO
-- [arbitrary-write-to-rce](../arbitrary-write-to-rce/SKILL.md) — convert a write primitive (GOT, hooks, vtable) into code execution
-- [heap-exploitation](../heap-exploitation/SKILL.md) — when the vulnerability is in heap rather than stack
+- [format-string-exploitation](../hack-format-string-exploitation/SKILL.md) — leak canary/libc/PIE base via format string before triggering overflow
+- [binary-protection-bypass](https://github.com/xiaoyang-xyc/whitebox/blob/main/hack-binary-protection-bypass/SKILL.md) — systematic bypass of NX, ASLR, PIE, canary, RELRO
+- [arbitrary-write-to-rce](../hack-arbitrary-write-to-rce/SKILL.md) — convert a write primitive (GOT, hooks, vtable) into code execution
+- [heap-exploitation](../hack-heap-exploitation/SKILL.md) — when the vulnerability is in heap rather than stack
 
 ### Advanced Reference
 

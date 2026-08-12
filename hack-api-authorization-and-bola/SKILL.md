@@ -43,6 +43,6 @@ description: >-
 
 ## 5. NEXT ROUTING
 
-- For JWT or token-layer abuse: [api auth and jwt abuse](../api-auth-and-jwt-abuse/SKILL.md)
-- For GraphQL and hidden parameter discovery: [graphql and hidden parameters](../graphql-and-hidden-parameters/SKILL.md)
-- For broader IDOR patterns outside APIs: [idor broken object authorization](../idor-broken-object-authorization/SKILL.md)
+- For JWT or token-layer abuse: [api auth and jwt abuse](../hack-api-auth-and-jwt-abuse/SKILL.md)
+- For GraphQL and hidden parameter discovery: [graphql and hidden parameters](../hack-graphql-and-hidden-parameters/SKILL.md)
+- For broader IDOR patterns outside APIs: [idor broken object authorization](../hack-idor-broken-object-authorization/SKILL.md)

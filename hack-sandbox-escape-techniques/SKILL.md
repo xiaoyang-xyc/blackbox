@@ -10,10 +10,10 @@ description: >-
 
 ## 0. RELATED ROUTING
 
-- [browser-exploitation-v8](../browser-exploitation-v8/SKILL.md) — V8 exploitation for renderer RCE before browser sandbox escape
-- [container-escape-techniques](../container-escape-techniques/SKILL.md) — Docker/container specific escape techniques
-- [kernel-exploitation](../kernel-exploitation/SKILL.md) — kernel exploit for container/namespace escape
-- [linux-privilege-escalation](../linux-privilege-escalation/SKILL.md) — post-escape privilege escalation
+- [browser-exploitation-v8](../hack-browser-exploitation-v8/SKILL.md) — V8 exploitation for renderer RCE before browser sandbox escape
+- [container-escape-techniques](../hack-container-escape-techniques/SKILL.md) — Docker/container specific escape techniques
+- [kernel-exploitation](../hack-kernel-exploitation/SKILL.md) — kernel exploit for container/namespace escape
+- [linux-privilege-escalation](../hack-linux-privilege-escalation/SKILL.md) — post-escape privilege escalation
 
 ### Advanced References
 

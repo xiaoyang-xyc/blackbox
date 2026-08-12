@@ -12,10 +12,10 @@ description: >-
 
 Before going deep, consider loading:
 
-- [active-directory-acl-abuse](../active-directory-acl-abuse/SKILL.md) for ACL-based attacks that enable ESC4 (template modification)
-- [active-directory-kerberos-attacks](../active-directory-kerberos-attacks/SKILL.md) for Kerberos techniques after obtaining certificates
-- [ntlm-relay-coercion](../ntlm-relay-coercion/SKILL.md) for ESC8 (relay to HTTP enrollment endpoint)
-- [windows-lateral-movement](../windows-lateral-movement/SKILL.md) for using obtained certificates for lateral movement
+- [active-directory-acl-abuse](../hack-active-directory-acl-abuse/SKILL.md) for ACL-based attacks that enable ESC4 (template modification)
+- [active-directory-kerberos-attacks](../hack-active-directory-kerberos-attacks/SKILL.md) for Kerberos techniques after obtaining certificates
+- [ntlm-relay-coercion](../hack-ntlm-relay-coercion/SKILL.md) for ESC8 (relay to HTTP enrollment endpoint)
+- [windows-lateral-movement](../hack-windows-lateral-movement/SKILL.md) for using obtained certificates for lateral movement
 
 ### Advanced Reference
 

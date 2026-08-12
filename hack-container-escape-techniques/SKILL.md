@@ -12,9 +12,9 @@ description: >-
 
 Before going deep, consider loading:
 
-- [linux-privilege-escalation](../linux-privilege-escalation/SKILL.md) when you first need root inside the container before attempting escape
-- [kubernetes-pentesting](../kubernetes-pentesting/SKILL.md) for K8s-specific attack paths beyond pod escape
-- [linux-security-bypass](../linux-security-bypass/SKILL.md) when seccomp/AppArmor blocks your escape technique
+- [linux-privilege-escalation](../hack-linux-privilege-escalation/SKILL.md) when you first need root inside the container before attempting escape
+- [kubernetes-pentesting](../hack-kubernetes-pentesting/SKILL.md) for K8s-specific attack paths beyond pod escape
+- [linux-security-bypass](../hack-linux-security-bypass/SKILL.md) when seccomp/AppArmor blocks your escape technique
 
 ### Advanced Reference
 
@@ -282,7 +282,7 @@ Overwrites host runc binary when `docker exec` is used.
 | `privileged: true` | Mount host disk / nsenter |
 | SA token with RBAC | Create new privileged pod via API |
 
-See [kubernetes-pentesting](../kubernetes-pentesting/SKILL.md) for full K8s attack paths.
+See [kubernetes-pentesting](../hack-kubernetes-pentesting/SKILL.md) for full K8s attack paths.
 
 ---
 

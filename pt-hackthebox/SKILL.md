@@ -19,10 +19,10 @@ context: fork
 
 ## References
 - [workflow.md](reference/workflow.md) — Workflow overview with credentials, VPN, setup, and coordinator spawn
-- [spawning-recipes.md](../coordination/reference/spawning-recipes.md) — Coordinator agent spawn prompt templates (exploitation, flag submission, completion report, stats)
-- [completion-report-schema.md](../../formats/htb-completion-report.md) — Challenge completion report structure & template
+- spawning-recipes.md — Coordinator agent spawn prompt templates (exploitation, flag submission, completion report, stats)
+- completion-report-schema.md — Challenge completion report structure & template
 - [slack-notifications.md](reference/slack-notifications.md) — Slack completion notification format & examples
 - [platform-navigation.md](reference/platform-navigation.md) — Platform site navigation guide
 - [vpn-pool-routing.md](reference/vpn-pool-routing.md) — VPN pool isolation. Pre-flight check before spawning any machine (release_arena vs dedivip_lab vs others)
 - [vpn-setup.md](reference/vpn-setup.md) — VPN connectivity troubleshooting
-- [anti-bot-bypass.md](../reconnaissance/reference/anti-bot-bypass.md) — Cloudflare/Turnstile detection evasion
+- [anti-bot-bypass.md](../pt-reconnaissance/reference/anti-bot-bypass.md) — Cloudflare/Turnstile detection evasion

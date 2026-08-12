@@ -460,7 +460,7 @@ Companion bug: free course detail returns `{"id": "60caa21e853f5c1651b27c1b", ..
 
 For the full upload attack workflow beyond pure logic flaws, also load:
 
-- [upload insecure files](../upload-insecure-files/SKILL.md)
+- upload insecure files
 
 ```
 Upload size limit: 10MB

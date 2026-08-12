@@ -12,10 +12,10 @@ description: >-
 
 Before going deep, consider loading:
 
-- [container-escape-techniques](../container-escape-techniques/SKILL.md) when the target is a container and you need to escape to host
-- [linux-security-bypass](../linux-security-bypass/SKILL.md) when facing restricted shells, AppArmor, SELinux, or seccomp
-- [linux-lateral-movement](../linux-lateral-movement/SKILL.md) after obtaining root for pivoting to adjacent hosts
-- [kubernetes-pentesting](../kubernetes-pentesting/SKILL.md) when the host is a Kubernetes node
+- [container-escape-techniques](../hack-container-escape-techniques/SKILL.md) when the target is a container and you need to escape to host
+- [linux-security-bypass](../hack-linux-security-bypass/SKILL.md) when facing restricted shells, AppArmor, SELinux, or seccomp
+- [linux-lateral-movement](../hack-linux-lateral-movement/SKILL.md) after obtaining root for pivoting to adjacent hosts
+- [kubernetes-pentesting](../hack-kubernetes-pentesting/SKILL.md) when the host is a Kubernetes node
 
 ### Advanced Reference
 

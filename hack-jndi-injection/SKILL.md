@@ -10,8 +10,8 @@ description: >-
 
 ## 0. RELATED ROUTING
 
-- [deserialization-insecure](../deserialization-insecure/SKILL.md) when JNDI leads to deserialization (post-8u191 bypass path)
-- [expression-language-injection](../expression-language-injection/SKILL.md) when the JNDI sink is reached via SpEL or OGNL expression evaluation
+- [deserialization-insecure](../hack-deserialization-insecure/SKILL.md) when JNDI leads to deserialization (post-8u191 bypass path)
+- [expression-language-injection](../hack-expression-language-injection/SKILL.md) when the JNDI sink is reached via SpEL or OGNL expression evaluation
 
 ---
 

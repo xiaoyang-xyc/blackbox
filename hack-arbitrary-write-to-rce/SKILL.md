@@ -10,11 +10,11 @@ description: >-
 
 ## 0. RELATED ROUTING
 
-- [heap-exploitation](../heap-exploitation/SKILL.md) — obtaining the arbitrary write via heap attacks
-- [format-string-exploitation](../format-string-exploitation/SKILL.md) — obtaining the arbitrary write via %n
-- [stack-overflow-and-rop](../stack-overflow-and-rop/SKILL.md) — stack-based write primitives
-- [binary-protection-bypass](../binary-protection-bypass/SKILL.md) — which targets are available given protection configuration
-- [heap-exploitation IO_FILE_EXPLOITATION.md](../heap-exploitation/IO_FILE_EXPLOITATION.md) — deep _IO_FILE structure exploitation
+- [heap-exploitation](../hack-heap-exploitation/SKILL.md) — obtaining the arbitrary write via heap attacks
+- [format-string-exploitation](../hack-format-string-exploitation/SKILL.md) — obtaining the arbitrary write via %n
+- [stack-overflow-and-rop](../hack-stack-overflow-and-rop/SKILL.md) — stack-based write primitives
+- [binary-protection-bypass](https://github.com/xiaoyang-xyc/whitebox/blob/main/hack-binary-protection-bypass/SKILL.md) — which targets are available given protection configuration
+- [heap-exploitation IO_FILE_EXPLOITATION.md](../hack-heap-exploitation/IO_FILE_EXPLOITATION.md) — deep _IO_FILE structure exploitation
 
 ---
 
@@ -107,7 +107,7 @@ write(libc.sym['__malloc_hook'], libc.sym['realloc'] + 2)  # +2, +4, +6 etc. to 
 
 ## 4. _IO_FILE VTABLE
 
-See [IO_FILE_EXPLOITATION.md](../heap-exploitation/IO_FILE_EXPLOITATION.md) for full details.
+See [IO_FILE_EXPLOITATION.md](../hack-heap-exploitation/IO_FILE_EXPLOITATION.md) for full details.
 
 ### Quick Summary by Version
 
@@ -239,7 +239,7 @@ kernel_write(modprobe_path_addr, b'/tmp/x\x00')
 # → kernel calls modprobe_path ("/tmp/x") as root
 ```
 
-See [kernel-exploitation](../kernel-exploitation/SKILL.md) for kernel write primitives.
+See [kernel-exploitation](../hack-kernel-exploitation/SKILL.md) for kernel write primitives.
 
 ---
 

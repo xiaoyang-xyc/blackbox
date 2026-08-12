@@ -12,10 +12,10 @@ description: >-
 
 Before going deep, consider loading:
 
-- [linux-privilege-escalation](../linux-privilege-escalation/SKILL.md) once you've broken out of restrictions and need to escalate
-- [container-escape-techniques](../container-escape-techniques/SKILL.md) when security mechanisms are container-specific (seccomp profiles, AppArmor docker-default)
-- [linux-lateral-movement](../linux-lateral-movement/SKILL.md) after bypassing restrictions for pivoting
-- [cmdi-command-injection](../cmdi-command-injection/SKILL.md) when the restriction is on command execution from a web application context
+- [linux-privilege-escalation](../hack-linux-privilege-escalation/SKILL.md) once you've broken out of restrictions and need to escalate
+- [container-escape-techniques](../hack-container-escape-techniques/SKILL.md) when security mechanisms are container-specific (seccomp profiles, AppArmor docker-default)
+- [linux-lateral-movement](../hack-linux-lateral-movement/SKILL.md) after bypassing restrictions for pivoting
+- [cmdi-command-injection](../hack-cmdi-command-injection/SKILL.md) when the restriction is on command execution from a web application context
 
 ---
 

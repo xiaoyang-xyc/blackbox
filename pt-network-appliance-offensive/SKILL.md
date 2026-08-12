@@ -11,12 +11,12 @@ description: Offensive testing of perimeter network appliances and VPN crypto �
 
 | Tool | Does | Anti-footgun |
 |------|------|--------------|
-| [`tools/ike_enum.py`](../../tools/ike_enum.py) | IKEv1 aggressive-mode detection, IKEv1/IKEv2 transform + DH-group enum, NOTIFY / NAT-T decode (wraps `ike-scan`, raw ISAKMP SA_INIT builder fallback) | Aggressive-mode support (PSK-hash leak) is the finding; enumerate, don't crack in-band |
-| [`tools/checkpoint_sic_opsec.py`](../../tools/checkpoint_sic_opsec.py) | Fingerprint SIC (18190/1), OPSEC LEA/ELA (18183/4), CA (18192/18210), FW1 (256/264), Gaia Portal; emit a CVE-**precondition** map incl. CVE-2024-24919 | CVE-2024-24919 is `applicable` ONLY when the RA/Mobile-Access marker is observed — else `undetermined` |
-| [`tools/appliance_version_infer.py`](../../tools/appliance_version_infer.py) | Safe firmware/patch-level inference for FortiGate / PAN-OS / Cisco ASA / Citrix from headers, login markers, cert CN/serial → CVE applicability | Never asserts `applicable` on a low-confidence / unknown version — returns `undetermined` |
-| [`tools/tls_handshake_probe.py`](../../tools/tls_handshake_probe.py) | Which TLS versions are supported, by **completed handshake** per pinned protocol | Fixes the `openssl s_client` exit/SECLEVEL false-positive — an aborted handshake ≠ support |
-| [`tools/ntlm_decode.py`](../../tools/ntlm_decode.py) | Decode an NTLM Type-2 (CHALLENGE) AV_PAIR block → NetBIOS/DNS host, domain, forest, OS build | Info-leak finding from an unauthenticated challenge; no auth attempted |
-| [`tools/perimeter_forensics.py`](../../tools/perimeter_forensics.py) | RST-TTL forgery discriminator (real host vs firewall forging a RST) + IKE NOTIFY decode | Never asserts "internal host behind FW" on RSTs alone — a firewall forges RSTs indistinguishably at this layer; returns `undetermined` without an open-service TTL baseline |
+| `tools/ike_enum.py` | IKEv1 aggressive-mode detection, IKEv1/IKEv2 transform + DH-group enum, NOTIFY / NAT-T decode (wraps `ike-scan`, raw ISAKMP SA_INIT builder fallback) | Aggressive-mode support (PSK-hash leak) is the finding; enumerate, don't crack in-band |
+| `tools/checkpoint_sic_opsec.py` | Fingerprint SIC (18190/1), OPSEC LEA/ELA (18183/4), CA (18192/18210), FW1 (256/264), Gaia Portal; emit a CVE-**precondition** map incl. CVE-2024-24919 | CVE-2024-24919 is `applicable` ONLY when the RA/Mobile-Access marker is observed — else `undetermined` |
+| `tools/appliance_version_infer.py` | Safe firmware/patch-level inference for FortiGate / PAN-OS / Cisco ASA / Citrix from headers, login markers, cert CN/serial → CVE applicability | Never asserts `applicable` on a low-confidence / unknown version — returns `undetermined` |
+| `tools/tls_handshake_probe.py` | Which TLS versions are supported, by **completed handshake** per pinned protocol | Fixes the `openssl s_client` exit/SECLEVEL false-positive — an aborted handshake ≠ support |
+| `tools/ntlm_decode.py` | Decode an NTLM Type-2 (CHALLENGE) AV_PAIR block → NetBIOS/DNS host, domain, forest, OS build | Info-leak finding from an unauthenticated challenge; no auth attempted |
+| `tools/perimeter_forensics.py` | RST-TTL forgery discriminator (real host vs firewall forging a RST) + IKE NOTIFY decode | Never asserts "internal host behind FW" on RSTs alone — a firewall forges RSTs indistinguishably at this layer; returns `undetermined` without an open-service TTL baseline |
 
 ## Workflow
 
@@ -36,5 +36,5 @@ description: Offensive testing of perimeter network appliances and VPN crypto �
 
 ## Reference
 
-- Static counterpart: [`firewall-review`](../firewall-review/SKILL.md) (config audit). Generic network: [`infrastructure`](../infrastructure/SKILL.md).
-- CVE precondition / applicability discipline: [`../coordination/reference/severity-calibration.md`](../coordination/reference/severity-calibration.md) (rules 4-5).
+- Static counterpart: [`firewall-review`](https://github.com/xiaoyang-xyc/whitebox/blob/main/pt-firewall-review/SKILL.md) (config audit). Generic network: [`infrastructure`](../pt-infrastructure/SKILL.md).
+- CVE precondition / applicability discipline: `../coordination/reference/severity-calibration.md` (rules 4-5).

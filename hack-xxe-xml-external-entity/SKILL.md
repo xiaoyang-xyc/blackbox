@@ -12,7 +12,7 @@ description: >-
 
 Also load:
 
-- [upload insecure files](../upload-insecure-files/SKILL.md) when XXE is reachable through SVG, OOXML, import, or preview pipelines
+- upload insecure files when XXE is reachable through SVG, OOXML, import, or preview pipelines
 
 ### Extended Scenarios
 

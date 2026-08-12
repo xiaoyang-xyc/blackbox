@@ -10,9 +10,9 @@ description: >-
 
 ## 0. RELATED ROUTING
 
-- [jndi-injection](../jndi-injection/SKILL.md) when deserialization leads to JNDI lookup (e.g., post-JDK 8u191 bypass via LDAP → deserialization)
-- [unauthorized-access-common-services](../unauthorized-access-common-services/SKILL.md) when the deserialization endpoint is an exposed management service (RMI Registry, T3, AJP)
-- [ghost-bits-cast-attack](../ghost-bits-cast-attack/SKILL.md) when a WAF blocks your BCEL ClassLoader or Fastjson `@type` payload — Ghost Bits wraps each bytecode byte in a Unicode char whose low 8 bits match, yielding a payload the WAF cannot fingerprint
+- [jndi-injection](../hack-jndi-injection/SKILL.md) when deserialization leads to JNDI lookup (e.g., post-JDK 8u191 bypass via LDAP → deserialization)
+- unauthorized-access-common-services when the deserialization endpoint is an exposed management service (RMI Registry, T3, AJP)
+- [ghost-bits-cast-attack](../hack-ghost-bits-cast-attack/SKILL.md) when a WAF blocks your BCEL ClassLoader or Fastjson `@type` payload — Ghost Bits wraps each bytecode byte in a Unicode char whose low 8 bits match, yielding a payload the WAF cannot fingerprint
 
 ### Advanced Reference
 

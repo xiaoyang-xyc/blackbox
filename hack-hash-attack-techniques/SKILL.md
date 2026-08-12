@@ -12,9 +12,9 @@ description: >-
 
 ## 0. RELATED ROUTING
 
-- [rsa-attack-techniques](../rsa-attack-techniques/SKILL.md) when hash weaknesses affect RSA signature schemes
-- [symmetric-cipher-attacks](../symmetric-cipher-attacks/SKILL.md) when hash is used in key derivation
-- [classical-cipher-analysis](../classical-cipher-analysis/SKILL.md) when analyzing hash-like constructions in classical ciphers
+- [rsa-attack-techniques](https://github.com/xiaoyang-xyc/whitebox/blob/main/hack-rsa-attack-techniques/SKILL.md) when hash weaknesses affect RSA signature schemes
+- [symmetric-cipher-attacks](https://github.com/xiaoyang-xyc/whitebox/blob/main/hack-symmetric-cipher-attacks/SKILL.md) when hash is used in key derivation
+- [classical-cipher-analysis](https://github.com/xiaoyang-xyc/whitebox/blob/main/hack-classical-cipher-analysis/SKILL.md) when analyzing hash-like constructions in classical ciphers
 
 ### Quick attack selection
 

@@ -10,9 +10,9 @@ description: >-
 
 ## 0. RELATED ROUTING
 
-- [ai-ml-security](../ai-ml-security/SKILL.md) for broader ML security (adversarial examples, model poisoning, model extraction, data privacy attacks)
-- [xss-cross-site-scripting](../xss-cross-site-scripting/SKILL.md) for parallels between XSS (injecting into HTML context) and prompt injection (injecting into LLM context)
-- [ssrf-server-side-request-forgery](../ssrf-server-side-request-forgery/SKILL.md) when prompt injection chains into SSRF via tool calls
+- [ai-ml-security](https://github.com/xiaoyang-xyc/whitebox/blob/main/hack-ai-ml-security/SKILL.md) for broader ML security (adversarial examples, model poisoning, model extraction, data privacy attacks)
+- [xss-cross-site-scripting](../hack-xss-cross-site-scripting/SKILL.md) for parallels between XSS (injecting into HTML context) and prompt injection (injecting into LLM context)
+- [ssrf-server-side-request-forgery](../hack-ssrf-server-side-request-forgery/SKILL.md) when prompt injection chains into SSRF via tool calls
 
 ### Advanced Reference
 

@@ -18,7 +18,7 @@ This is the routing entry point for business-logic and state-machine issues.
 
 ## Skill Map
 
-- [Business Logic Vulnerabilities](../business-logic-vulnerabilities/SKILL.md)
+- [Business Logic Vulnerabilities](../hack-business-logic-vulnerabilities/SKILL.md)
 
 ## Recommended Flow
 
@@ -28,6 +28,6 @@ This is the routing entry point for business-logic and state-machine issues.
 
 ## Related Categories
 
-- [api-sec](../api-sec/SKILL.md)
-- [auth-sec](../auth-sec/SKILL.md)
-- [file-access-vuln](../file-access-vuln/SKILL.md)
+- [api-sec](../hack-api-sec/SKILL.md)
+- [auth-sec](../hack-auth-sec/SKILL.md)
+- [file-access-vuln](../hack-file-access-vuln/SKILL.md)

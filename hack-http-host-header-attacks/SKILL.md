@@ -13,12 +13,12 @@ description: >-
 
 ## 0. RELATED ROUTING
 
-- [web-cache-deception](../web-cache-deception/SKILL.md) when Host injection is combined with cache behavior
-- [ssrf-server-side-request-forgery](../ssrf-server-side-request-forgery/SKILL.md) when Host header routes requests to internal services
-- [open-redirect](../open-redirect/SKILL.md) when Host injection causes redirect to attacker domain
-- [waf-bypass-techniques](../waf-bypass-techniques/SKILL.md) when Host manipulation helps bypass WAF routing
-- [request-smuggling](../request-smuggling/SKILL.md) when smuggling enables Host header manipulation past front-end validation
-- [subdomain-takeover](../subdomain-takeover/SKILL.md) when Host routing exposes internal vhosts resolvable via subdomain
+- [web-cache-deception](../hack-web-cache-deception/SKILL.md) when Host injection is combined with cache behavior
+- [ssrf-server-side-request-forgery](../hack-ssrf-server-side-request-forgery/SKILL.md) when Host header routes requests to internal services
+- [open-redirect](../hack-open-redirect/SKILL.md) when Host injection causes redirect to attacker domain
+- [waf-bypass-techniques](../hack-waf-bypass-techniques/SKILL.md) when Host manipulation helps bypass WAF routing
+- [request-smuggling](../hack-request-smuggling/SKILL.md) when smuggling enables Host header manipulation past front-end validation
+- [subdomain-takeover](../hack-subdomain-takeover/SKILL.md) when Host routing exposes internal vhosts resolvable via subdomain
 
 ---
 
