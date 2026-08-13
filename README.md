@@ -1,14 +1,13 @@
 # blackbox
 
-黑盒安全测试技能集（Black-box Security Testing Skills）—— 给 AI Agent 用的外部攻击 / 渗透测试 playbook 合集，共 **140** 个技能，按攻击链组织。
+黑盒安全测试技能集，给 AI Agent 用的外部攻击/渗透测试 playbook 合集，共 140 个技能，按攻击链组织。
 
-> 黑盒视角：不看源码。从外部侦察、攻击面测绘，到漏洞利用、权限提升、横向移动的完整攻击链方法论。
-> 每个技能 = 一份独立 playbook（触发条件 / 操作步骤 / 工具命令 / 坑位备忘），可被 Claude Code、Hermes 等支持 Skills 的 Agent 直接加载。
+不看源码的视角：从外部侦察和攻击面测绘，到漏洞利用、权限提升、横向移动。每个技能是一份独立 playbook（触发条件/操作步骤/工具命令/坑位备忘），Claude Code、Hermes 等支持 Skills 的 Agent 可以直接加载。
 
 
 ## 技能索引
 
-### 🔍 侦察与攻击面测绘（13）
+### 侦察与攻击面测绘（13）
 
 | 技能 | 说明 |
 |------|------|
@@ -26,7 +25,7 @@
 | [web-frontend-recon](./web-frontend-recon/) | 前端 JS 侦察与 API 面提取方法——SPA fallback 识别、webpack chunk 接口提取、统一鉴权特征识别、OAuth/S… |
 | [web-spa-recon](./web-spa-recon/) | SPA 前端侦察——从 Vue/React 单页应用提取真实 API 攻击面。识别 SPA fallback、拉取 JS chunk 提取接口定… |
 
-### 💉 注入类漏洞（26）
+### 注入类漏洞（26）
 
 | 技能 | 说明 |
 |------|------|
@@ -57,7 +56,7 @@
 | [hack-xxe-xml-external-entity](./hack-xxe-xml-external-entity/) | XXE playbook |
 | [pt-injection](./pt-injection/) | Injection vulnerability testing - SQL, NoSQL, OS Command, SSTI, XXE, and… |
 
-### 🌐 Web 应用与客户端（19）
+### Web 应用与客户端（19）
 
 | 技能 | 说明 |
 |------|------|
@@ -81,7 +80,7 @@
 | [pt-web-app-logic](./pt-web-app-logic/) | Web application logic testing - business logic flaws, race conditions, a… |
 | [web-app-security](./web-app-security/) | Web应用安全测试三柱法 — 基于Andrew Hoffman《Web Application Security 2nd》(O'Reilly 2… |
 
-### 🔑 认证、授权与令牌（15）
+### 认证、授权与令牌（15）
 
 | 技能 | 说明 |
 |------|------|
@@ -101,7 +100,7 @@
 | [pt-authenticated-session-acquisition](./pt-authenticated-session-acquisition/) | Acquire an authenticated session THROUGH MFA/OTP on an in-scope target a… |
 | [pt-authentication](./pt-authentication/) | Authentication security testing - auth bypass, JWT attacks, OAuth flaws,… |
 
-### 🎯 SRC 狩猎与业务逻辑（14）
+### SRC 狩猎与业务逻辑（14）
 
 | 技能 | 说明 |
 |------|------|
@@ -120,7 +119,7 @@
 | [pt-hackerone](./pt-hackerone/) | HackerOne bug bounty automation - parses scope CSVs, deploys parallel pe… |
 | [src-hunter-skill](./src-hunter-skill/) | 实战 SRC / 众测 / Bug bounty 漏洞挖掘工作流 skill。包含：5 阶段方法论（intake → recon → enum… |
 
-### 💻 系统提权与横向移动（13）
+### 系统提权与横向移动（13）
 
 | 技能 | 说明 |
 |------|------|
@@ -138,7 +137,7 @@
 | [hack-windows-privilege-escalation](./hack-windows-privilege-escalation/) | Windows local privilege escalation playbook |
 | [pt-system](./pt-system/) | System exploitation testing - Active Directory attacks, privilege escala… |
 
-### 🏢 Active Directory 与域渗透（5）
+### Active Directory 与域渗透（5）
 
 | 技能 | 说明 |
 |------|------|
@@ -148,7 +147,7 @@
 | [hack-active-directory-kerberos-attacks](./hack-active-directory-kerberos-attacks/) | Kerberos attack playbook for Active Directory |
 | [hack-ntlm-relay-coercion](./hack-ntlm-relay-coercion/) | NTLM relay and authentication coercion playbook |
 
-### ☁️ 云、容器与供应链（8）
+### 云、容器与供应链（8）
 
 | 技能 | 说明 |
 |------|------|
@@ -161,7 +160,7 @@
 | [pt-cloud-containers](./pt-cloud-containers/) | Cloud and container security testing - AWS, Azure, GCP, Docker, and Kube… |
 | [redis-rogue-master-rce](./redis-rogue-master-rce/) | Redis 主从复制 RCE 完整打法与生产数据安全纪律。打 6379/Redis 凭据 |
 
-### 📱 移动端安全（4）
+### 移动端安全（4）
 
 | 技能 | 说明 |
 |------|------|
@@ -170,14 +169,14 @@
 | [hack-mobile-ssl-pinning-bypass](./hack-mobile-ssl-pinning-bypass/) | Mobile SSL pinning bypass playbook |
 | [pt-mobile-security](./pt-mobile-security/) | Mobile application security testing (Android + iOS) mapped to OWASP MASV… |
 
-### 🤖 AI / LLM 安全（2）
+### AI / LLM 安全（2）
 
 | 技能 | 说明 |
 |------|------|
 | [pt-ai-threat-testing](./pt-ai-threat-testing/) | Offensive AI security testing and exploitation framework. Systematically… |
 | [red-team-ai](./red-team-ai/) | AI驱动的红队实战指南 — 基于《Redefining Hacking》作者Omar Santos(DEF CON Red Team Villa… |
 
-### 🕸️ 网络协议与边界设施（7）
+### 网络协议与边界设施（7）
 
 | 技能 | 说明 |
 |------|------|
@@ -189,13 +188,13 @@
 | [pt-network-appliance-offensive](./pt-network-appliance-offensive/) | Offensive testing of perimeter network appliances and VPN crypto — IKE/I… |
 | [safeline-waf-bypass](./safeline-waf-bypass/) | SafeLine WAF bypass testing |
 
-### 🎭 社会工程（1）
+### 社会工程（1）
 
 | 技能 | 说明 |
 |------|------|
 | [pt-social-engineering](./pt-social-engineering/) | Social engineering testing - phishing, pretexting, vishing, and physical… |
 
-### 🧰 方法论、框架与实战（13）
+### 方法论、框架与实战（13）
 
 | 技能 | 说明 |
 |------|------|
